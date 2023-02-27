@@ -19,10 +19,7 @@ MyWiFi mywifi;
 
 
 
-    // ServoA 90° in 220ms;
-    // ServoB 170° in 400ms;
 
-    // => 90° / 250ms = 3,6° / 10ms = 0,36°/ms 
 
 static const bool SERIAL_PRINTLN = false;
 bool firstClientConnected = false;

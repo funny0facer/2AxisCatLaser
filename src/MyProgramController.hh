@@ -24,7 +24,11 @@ class MyProgramController{
 
 
 private:
-    const float MAX_SPEED = 0.3; // speed in °/ms
+    // ServoA 90° in 220ms;
+    // ServoB 170° in 400ms;
+    // => 90° / 250ms = 3,6° / 10ms = 0,36°/ms 
+
+    const float MAX_SPEED = 0.4; // speed in °/ms
     MyServo &servoA;
     MyServo &servoB;
     Laser &laser;
