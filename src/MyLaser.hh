@@ -15,7 +15,7 @@ class Laser{
     bool toogleState();
 
     private:
-    static const bool SERIAL_PRINTLN = true;
+    static const bool SERIAL_PRINTLN = false;
     static const uint32_t WAIT_TIME = 50;
 
     bool state;
