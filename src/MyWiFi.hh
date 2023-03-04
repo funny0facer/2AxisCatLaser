@@ -4,8 +4,13 @@
 #include <WiFi.h>
 #include <WifiCredentials.hh>
 //inside WifiCredentials.hh:
-//static const char* ssid     = "TODO: SSID";
-//static const char* password = "TODO: PASSWORD";
+//#pragma once
+//#ifndef _CREDENTIALS_HH_
+//#define _CREDENTIALS_HH_
+//static const char* ssid     = "TODO";
+//static const char* password = "TODO";
+//#endif
+
 
 
 class MyWiFi{
