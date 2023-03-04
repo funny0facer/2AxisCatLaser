@@ -58,17 +58,29 @@ void setupLaser(){
   laser.offWithDelay();
 }
 
+//this might be necessary if the client looses connection to the server 
+//and the esp does not recognize this.
+//In this case, the esp would stick with the already dead client.
+void checkForNewerClient(){
+  WiFiClient tempClient;
+  if (tempClient=mywifi.server.available()){
+    mywifi.client.stop();
+    mywifi.client=tempClient;
+  }
+}
+
 void randomWait(){
   Serial.println("begin randomWait");
   long waitTimeInSeconds = random(30,150);
   for (long i=0; i < (waitTimeInSeconds*10); i++){
     if(mywifi.client){
       if (mywifi.client.connected()){
-        //Serial.println("client connnected");
+        //Serial.println("randomWait: client is connnected");
         if (mywifi.client.available()){
-          //Serial.println("client available");
+          //Serial.println("randomWait: client is available");
           break;
         }
+        checkForNewerClient();
       }
     }else{
       //Serial.println("check for client available");
@@ -76,7 +88,7 @@ void randomWait(){
     }
     delay(100); // 0.1 seconds
   }
-  Serial.println("end randomWait");
+  Serial.println("randomWait: end");
 }
 
 
@@ -186,6 +198,7 @@ void loop()
           }
         }
       }
+      checkForNewerClient();
       delay(1);
     }
  
