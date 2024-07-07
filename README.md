@@ -13,9 +13,9 @@ The ESP can receive telnet messages to be controlled remotely:
   - prog=250 # selects program 250 and runs it 
 - posA
   - posA=10 # moves axis A to 10°
-- posB=
+- posB
   - posB=5 # moves axis B to 5°
-- Laser=
+- Laser
   - Laser=0 # Laser off
   - Laser=1 # Laser on
 
